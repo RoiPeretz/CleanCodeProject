@@ -1,3 +1,4 @@
+//testing
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,4 @@ export class EntitiesManagerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
