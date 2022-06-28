@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MapApp": {
+    "MapeeAngularClient": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -18,10 +18,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
@@ -65,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MapApp:build:production"
+              "browserTarget": "MapeeAngularClient:build:production"
             },
             "development": {
-              "browserTarget": "MapApp:build:development"
+              "browserTarget": "MapeeAngularClient:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MapApp:build"
+            "browserTarget": "MapeeAngularClient:build"
           }
         },
         "test": {
@@ -86,10 +83,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
