@@ -15,12 +15,12 @@ export class AppComponent {
       {
         label: 'Entities Manager',
         url: './entities',
-        index: 1,
+        index: 0,
       },
       {
         label: 'Map Manager',
         url: './maps',
-        index: 0,
+        index: 1,
       },
     ];
   }
