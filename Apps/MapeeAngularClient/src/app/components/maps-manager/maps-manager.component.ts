@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IMapModel } from 'src/app/models/MapModel/iMapModel';
-import { MapsService } from '../../Services/Maps/maps.service';
+import { IMapModel } from 'src/app/models/mapModel/iMapModel';
+import { MapsService } from '../../Services/maps/maps.service';
 
 @Component({
   selector: 'app-maps-manager',

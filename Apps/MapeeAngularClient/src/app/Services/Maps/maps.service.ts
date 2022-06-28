@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IMapModel } from 'src/app/models/MapModel/iMapModel';
+import { IMapModel } from 'src/app/models/mapModel/iMapModel';
 import { MapDummyData } from './mapDummyData';
 
 @Injectable({
