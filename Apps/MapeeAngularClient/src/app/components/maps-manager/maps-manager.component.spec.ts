@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MapsManagerComponent } from './maps-manager.component';
 
 describe('MapsManagerComponent', () => {
@@ -8,9 +7,8 @@ describe('MapsManagerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapsManagerComponent ]
-    })
-    .compileComponents();
+      declarations: [MapsManagerComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MapsManagerComponent);
     component = fixture.componentInstance;
