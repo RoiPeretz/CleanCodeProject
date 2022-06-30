@@ -15,9 +15,7 @@
   height: 100%;
 }
 
-#drawer-content {
-  top: 0;
-  max-width: 25%;
-  height: 100%;
-  bottom: 0;
+.selected-map-content {
+  width: 50%;
+  height: 50%;
 }
