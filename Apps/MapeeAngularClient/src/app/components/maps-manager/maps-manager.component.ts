@@ -13,8 +13,10 @@ export class MapsManagerComponent implements OnInit {
   public SelectedMap: IMapModel | undefined;
 
   constructor(private readonly MapService: MapsService) {
-    var current = MapService.GetAllMaps();
-    this.Maps = Array.from(current);
+    this.Maps = [];
+    MapService.GetAllMaps().subscribe((maps) => {
+      this.Maps = Array.from(maps);
+    });
   }
 
   ngOnInit(): void {}
