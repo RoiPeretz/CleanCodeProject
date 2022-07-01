@@ -11,9 +11,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { MapUploaderDialogComponent } from './components/map-uploader/map-uploader-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AppComponent, MapsManagerComponent, EntitiesManagerComponent],
+  declarations: [AppComponent, MapsManagerComponent, EntitiesManagerComponent, MapUploaderDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatSidenavModule,
     MatButtonModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

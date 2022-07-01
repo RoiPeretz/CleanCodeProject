@@ -1,10 +1,10 @@
 <mat-drawer-container id="drawer-container">
   <mat-drawer mode="side" opened id="drawer">
     <div>
-      <button mat-raised-button id="upload-button" color="primary">
-        <mat-icon>file_upload</mat-icon>
-        Upload
+      <button mat-button class="open-dialog-btn" (click)="openDialog()" title="ADD MAP">
+        <mat-icon>add_circle_outline</mat-icon>
       </button>
+ 
       <mat-selection-list
         #maps
         (selectionChange)="onSelectionChange($event)"

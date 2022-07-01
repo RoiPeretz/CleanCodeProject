@@ -1,0 +1,13 @@
+<input type="file" class="file-input" (change)="onFileSelected($event)" #fileSelect>
+
+<h1 mat-dialog-title>MAP UPLOADER</h1>
+<div mat-dialog-content class="file-upload">
+  <input matInput placeholder="MAP FILE NAME" [value]="Map2Upload.name" (input)="selectionChamged($event)">
+  <button mat-button color="primary" class="file-select-btn" (click)="fileSelect.click()" title="SELECT MAP">
+    <mat-icon>attach_file</mat-icon>
+  </button>
+  <button mat-raised-button class="upload-btn" color="primary" (click)="fileUpload()" title="UPLLOAD MAP">
+    <mat-icon>file_upload</mat-icon>
+    Upload
+  </button>
+</div>
