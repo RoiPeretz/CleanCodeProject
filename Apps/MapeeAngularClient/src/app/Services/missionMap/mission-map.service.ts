@@ -17,7 +17,7 @@ export class MissionMapService {
     this._missionMap = new BehaviorSubject<string>(MapDummyData[0].name);
   }
 
-  PublishAsMissionMap(map: IMapModel): Observable<boolean> {
+  publishAsMissionMap(map: IMapModel): Observable<boolean> {
     this._missionMap.next(map.name);
     const response = of(true);
     return response;

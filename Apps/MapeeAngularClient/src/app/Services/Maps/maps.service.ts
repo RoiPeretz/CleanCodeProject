@@ -7,18 +7,18 @@ import { MapDummyData } from './mapDummyData';
   providedIn: 'root',
 })
 export class MapsService {
-  public GetAllMaps(): Observable<Iterable<IMapModel>> {
+  public getAllMaps(): Observable<Iterable<IMapModel>> {
     const arraySource = of(MapDummyData);
     return arraySource;
   }
 
-  public AddMap(map: IMapModel): Observable<boolean> {
+  public addMap(map: IMapModel): Observable<boolean> {
     MapDummyData.push(map);
     const arraySource = of(true);
     return arraySource;
   }
 
-  public DeleteMap(map: IMapModel): Observable<boolean> {
+  public deleteMap(map: IMapModel): Observable<boolean> {
     MapDummyData.splice(MapDummyData.indexOf(map), 1);
     const arraySource = of(true);
     return arraySource;

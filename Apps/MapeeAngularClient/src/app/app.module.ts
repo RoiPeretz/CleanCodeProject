@@ -8,14 +8,19 @@ import { MapsManagerComponent } from './components/maps-manager/maps-manager.com
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MapUploaderDialogComponent } from './components/map-uploader/map-uploader-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  declarations: [AppComponent, MapsManagerComponent, EntitiesManagerComponent, MapUploaderDialogComponent],
+  declarations: [
+    AppComponent,
+    MapsManagerComponent,
+    EntitiesManagerComponent,
+    MapUploaderDialogComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,10 +28,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTabsModule,
     MatListModule,
     MatIconModule,
-    MatCardModule,
     MatSidenavModule,
     MatButtonModule,
     MatDialogModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

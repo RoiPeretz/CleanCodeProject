@@ -1,8 +1,6 @@
-/* .open-dialog-btn {
-  top: 7px;
-  margin: 0 auto;
-  display: block;
-} */
+.spacer {
+  flex: 1 1 auto;
+}
 
 #drawer-container {
   height: 100%;
@@ -11,11 +9,30 @@
 }
 
 #drawer {
-  min-width: 35%;
+  min-width: 20%;
   height: 100%;
 }
 
-.selected-map-content {
-  width: 50%;
-  height: 50%;
+#open-dialog-btn {
+  padding-left: 16px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-item-name {
+  display: flex;
+}
+
+.list-item-is-mission {
+  padding: 4px;
+}
+
+#map-content {
+  max-width: 50%;
+  max-height: 50%;
+  margin: auto;
+  display: block;
 }

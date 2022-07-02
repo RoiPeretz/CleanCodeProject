@@ -1,34 +1,80 @@
 <mat-drawer-container id="drawer-container">
-  <mat-drawer mode="side" opened id="drawer">
+  <mat-drawer
+    id="drawer"
+    mode="side"
+    opened
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
     <div>
-      <button mat-button class="open-dialog-btn" (click)="openDialog()" title="ADD MAP">
-        <mat-icon>add_circle_outline</mat-icon>
-      </button>
- 
+      <div id="open-dialog-btn">
+        <button mat-button (click)="openDialog()" title="Add map">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </div>
+
       <mat-selection-list
-        #maps
         (selectionChange)="onSelectionChange($event)"
         [multiple]="false"
       >
-        <mat-list-option *ngFor="let map of Maps" [value]="map">
-          <mat-icon matListIcon>map</mat-icon>
-          {{ map.name }}
+        <mat-list-option *ngFor="let map of maps" [value]="map">
+          <div class="list-item">
+            <div class="list-item-name">
+              <mat-icon matListIcon>map</mat-icon>
+              <h1 matLine>{{ map.name }}</h1>
+            </div>
+            <div>
+              <mat-icon
+                class="list-item-is-mission"
+                *ngIf="map.name === missionMap"
+                >rocket_launch</mat-icon
+              >
+            </div>
+          </div>
         </mat-list-option>
       </mat-selection-list>
     </div>
   </mat-drawer>
-  <mat-drawer-content id="drawer-content">
-    <div [hidden]="!SelectedMap">
-      <mat-card>
-        <mat-card-title>{{ SelectedMap?.name }}</mat-card-title>
-        <mat-card-content>
-          <img class="selected-map-content" src="{{ SelectedMap?.content }}" />
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Set as mission map</button>
-          <button mat-button>Delete</button>
-        </mat-card-actions>
-      </mat-card>
+  <mat-drawer-content>
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+
+    <div [hidden]="!selectedMap">
+      <mat-toolbar>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="selectedMap?.name === missionMap"
+          (click)="onSetMissionMapRequest()"
+        >
+          <mat-icon matListIcon>rocket_launch</mat-icon>
+          Set as mission map
+        </button>
+        <span class="spacer"></span>
+        <button
+          mat-raised-button
+          color="warn"
+          [disabled]="selectedMap?.name === missionMap"
+          (click)="onDeleteMapRequested()"
+        >
+          <mat-icon matListIcon>delete</mat-icon>
+          Delete
+        </button>
+      </mat-toolbar>
+      <div>
+        <img id="map-content" src="{{ selectedMap?.content }}" />
+      </div>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>
