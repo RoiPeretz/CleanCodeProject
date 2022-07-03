@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { IMapModel } from 'src/app/models/mapModel/iMapModel';
 import { MapDummyData } from './mapDummyData';
 
@@ -7,6 +7,12 @@ import { MapDummyData } from './mapDummyData';
   providedIn: 'root',
 })
 export class MapsService {
+  private readonly _mapAdded: Subject<IMapModel> = new Subject<IMapModel>();
+
+  public get mapAdded(): Observable<IMapModel> {
+    return this._mapAdded.asObservable();
+  }
+
   public getAllMaps(): Observable<Iterable<IMapModel>> {
     const arraySource = of(MapDummyData);
     return arraySource;
@@ -14,6 +20,7 @@ export class MapsService {
 
   public addMap(map: IMapModel): Observable<boolean> {
     MapDummyData.push(map);
+    this._mapAdded.next(map);
     const arraySource = of(true);
     return arraySource;
   }

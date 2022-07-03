@@ -6,9 +6,9 @@
     #drawer
     class="sidenav"
     fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
+    [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset | async) ? 'over' : 'side'"
+    [opened]="(isHandset | async) === false"
   >
     <div>
       <div id="open-dialog-btn">
@@ -18,7 +18,7 @@
       </div>
 
       <mat-selection-list
-        (selectionChange)="onSelectionChange($event)"
+        (selectionChange)="onSelectionChanged($event)"
         [multiple]="false"
       >
         <mat-list-option *ngFor="let map of maps" [value]="map">
@@ -45,7 +45,7 @@
       aria-label="Toggle sidenav"
       mat-icon-button
       (click)="drawer.toggle()"
-      *ngIf="isHandset$ | async"
+      *ngIf="isHandset | async"
     >
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
