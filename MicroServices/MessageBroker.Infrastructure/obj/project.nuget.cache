@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "S23l30xDp7qLQjjqt77lyJyd5pgyFFkDcBA7fL2SA9n/9CvA1+zb1XzOt1shBB2WlEVniX4o8eQsZKNe4uZk6g==",
+  "dgSpecHash": "nsbRs0AniJOdlNZlPns3mIFPP6e6zu8CIx00MDzWekThUCagTTHvGNXa/MdL36Fi10vzre2CZLTXAcZgjBJZrg==",
   "success": true,
   "projectFilePath": "C:\\Git\\MapeeCleanCodeProject\\MicroServices\\MessageBroker.Infrastructure\\MessageBroker.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\roi08\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\roi08\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\roi08\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "C:\\Users\\roi08\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\roi08\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\roi08\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\roi08\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\roi08\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
