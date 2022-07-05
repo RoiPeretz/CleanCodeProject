@@ -28,6 +28,7 @@
 
 .list-item-name {
   display: flex;
+  align-items: center;
 }
 
 .list-item-is-mission {
