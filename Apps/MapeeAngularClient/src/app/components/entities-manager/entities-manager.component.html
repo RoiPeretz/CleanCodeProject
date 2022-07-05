@@ -1,1 +1,30 @@
-<p>entities-manager works!</p>
+<div class="wrapper">
+    <mat-grid-list cols="1" rowHeight="6:1">
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>Entity Name</mat-label>
+                <input matInput>
+            </mat-form-field> 
+        </mat-grid-tile> 
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>X</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>Y</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="button">
+                <button mat-raised-button color="primary">Primary</button>    
+            </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <canvas id="canvas" width="50" height="50"
+            style="border: 1px solid black;">
+        </canvas>
+</div>
