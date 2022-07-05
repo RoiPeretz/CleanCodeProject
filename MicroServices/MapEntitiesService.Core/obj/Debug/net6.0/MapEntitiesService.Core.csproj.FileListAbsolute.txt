@@ -1,0 +1,15 @@
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\bin\Debug\net6.0\MapEntitiesService.Core.deps.json
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\bin\Debug\net6.0\MapEntitiesService.Core.dll
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\bin\Debug\net6.0\MapEntitiesService.Core.pdb
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\bin\Debug\net6.0\MessageBroker.Core.dll
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\bin\Debug\net6.0\MessageBroker.Core.pdb
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\MapEntitiesService.Core.csproj.AssemblyReference.cache
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\MapEntitiesService.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\MapEntitiesService.Core.AssemblyInfoInputs.cache
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\MapEntitiesService.Core.AssemblyInfo.cs
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\MapEntitiesService.Core.csproj.CoreCompileInputs.cache
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\MapEntitiesService.Core.csproj.CopyComplete
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\MapEntitiesService.Core.dll
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\refint\MapEntitiesService.Core.dll
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\MapEntitiesService.Core.pdb
+C:\Git\MapeeCleanCodeProject\MicroServices\MapEntitiesService.Core\obj\Debug\net6.0\ref\MapEntitiesService.Core.dll
