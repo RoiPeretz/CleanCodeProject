@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MapEntitiesService.Core\MapEntitiesService.Core.csproj" />
+    <ProjectReference Include="..\MapEntitiesService.Infrastructure\MapEntitiesService.Infrastructure.csproj" />
+    <ProjectReference Include="..\MessageBroker.Infrastructure\MessageBroker.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
