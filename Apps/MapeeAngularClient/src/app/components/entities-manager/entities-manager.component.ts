@@ -1,89 +1,105 @@
-import { Component, OnInit} from '@angular/core';
-// import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { MapEntitiesService } from 'src/app/services/mapEntities/map-entities.service';
 import { MissionMapService } from 'src/app/services/missionMap/mission-map.service';
-// import { iMapEntity } from 'src/app/Models/mapEntityModels/iMap-entity.model';
-
+import { IMapEntity } from 'src/app/models/mapEntityModels/iMap-entity.model';
+import { MapEntity } from 'src/app/models/mapEntityModels/map-entity.model';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MapDummyData } from 'src/app/services/maps/mapDummyData';
+import { IMapModel } from 'src/app/models/mapModel/iMapModel';
+import { MapModel } from 'src/app/models/mapModel/mapModel';
 @Component({
   selector: 'app-entities-manager',
   templateUrl: './entities-manager.component.html',
   styleUrls: ['./entities-manager.component.css']
 })
-export class EntitiesManagerComponent implements OnInit {
+export class EntitiesManagerComponent implements OnInit, AfterViewInit {
   
-  // private canvas: HTMLCanvasElement = new HTMLCanvasElement();
-  // private context: CanvasRenderingContext2D = new CanvasRenderingContext2D();
-  // private paint: boolean = false;
-  
-  // private clickX: number[] = [];
-  // private clickY: number[] = [];
-  // private clickDrag: boolean[] = [];  
-  
-  constructor(private mapEntitiesService: MapEntitiesService, private missionMapService: MissionMapService) {      
-    // let canvas = document.getElementById('canvas') as
-    // HTMLCanvasElement;
-    // let context = canvas.getContext("2d");
-    // if (context == null) return;
-    // context.lineCap = 'round';
-    // context.lineJoin = 'round';
-    // context.strokeStyle = 'black';
-    // context.lineWidth = 1;
+  public map: IMapModel;
 
-    // this.canvas = canvas;
-    // this.context = context;
+  public entityImageSrc: string;
 
-    // this.redraw();
-    // this.createUserEvents(); 
+  public entityImageElement: ElementRef;
+
+  private _canvas!: HTMLCanvasElement;  
+  
+  @ViewChild('canvas')
+  private _canvasRef: ElementRef = {} as ElementRef;
+
+  mapEntityForm = this.formBuilder.group({
+    name: new FormControl<string>('', Validators.required),
+    x: 0,
+    y: 0
+  });
+  
+  constructor(private formBuilder: FormBuilder, private mapEntitiesService: MapEntitiesService, 
+                                   private missionMapService: MissionMapService) {
+    this.map = new MapModel("empty", "");
+    this.entityImageSrc = "../../../assets/location.png"
+    this.entityImageElement = new ElementRef(document.getElementById("entityImage"));                                
   }
-
-    private _map: string = "";
 
   ngOnInit(): void {
-      let missionMapObserver = this.missionMapService.missionMapChanged;
-      missionMapObserver.subscribe( (map) => {this._map = map;} )
+    let missionMapObserver = this.missionMapService.missionMapChanged;
+    missionMapObserver.subscribe( (mapName) => {
+      let currentMap = MapDummyData.find((map) => map.name == mapName);
+      if (currentMap == undefined) {
+        this.map = new MapModel("empty", "");  
+      } else {
+        this.map = currentMap;
+      }
+    } )
   }
 
-//   private createUserEvents() {
-//     let canvas = this.canvas;
+  ngAfterViewInit(): void {
+    this.entityImageElement.nativeElement = document.getElementById("mapEntity");
+    // this._canvas = this._canvasRef.nativeElement;
+    // this.subscribeToFormChanges();
+    // this.subscribeToCanvasClicks();
 
-//     canvas.addEventListener("mouseup", this.releaseEventHandler);
+    // let context = this._canvas.getContext("2d");
+    // var image = new Image;
+    // image.onload = function(){
+    //   context?.drawImage(image,0,0); 
+    // };
+    // image.src = this.map?.content!;
+    // context?.drawImage(image,0,0)
+  }
 
-//     // document.getElementById('clear')
-//     //         .addEventListener("click", this.clearEventHandler);
-// }
+  onSubmit() {
+    let name = this.mapEntityForm.value.name as string;
+    let x = this.mapEntityForm.value.x as number;
+    let y = this.mapEntityForm.value.y as number;
+    let entity = new MapEntity(name, x, y)  
+    this.mapEntitiesService.addMapEntity(entity);
+    this.mapEntityForm.reset();
+  }
 
-// private redraw() {
-//     let clickX = this.clickX;
-//     let context = this.context;
-//     let clickDrag = this.clickDrag;
-//     let clickY = this.clickY;
-//     for (let i = 0; i < clickX.length; ++i) {
-//         context.beginPath();
-//         if (clickDrag[i] && i) {
-//             context.moveTo(clickX[i - 1], clickY[i - 1]);
-//         } else {
-//             context.moveTo(clickX[i] - 1, clickY[i]);
-//         }
+  private subscribeToFormChanges() {
+    this.mapEntityForm.valueChanges.subscribe((values) => {
+      if (values.x == null || values.y == null) return;
 
-//         context.lineTo(clickX[i], clickY[i]);
-//         context.stroke();
-//     }
-//     context.closePath();
-// }
+      this.moveIcon(values.x, values.y);
+    })
+  }
 
-// private releaseEventHandler = () => {
-//   this.paint = false;
-//   this.redraw();
-// }
+  public onClick(e: MouseEvent ) {
+    this.mapEntityForm.controls.x.setValue(e.offsetX) ;
+    this.mapEntityForm.controls.y.setValue(e.offsetY);
+  
+    this.entityImageElement.nativeElement.style.transform = `translate(${e.offsetX - 50}px, ${e.offsetY}px)`
+  }
 
-// createForm() {
-//     this.formGroup = this.formBuilder.group({'name': [null, Validators.required],
-//     'x': [null, Validators.required],
-//     'y': [null, Validators.required]});
-//   }
+  private subscribeToCanvasClicks()
+  {
+    this._canvas.addEventListener('click', (clickEvent) => {
+      this.mapEntityForm.value.x = clickEvent.offsetX;
+      this.mapEntityForm.value.y = clickEvent.offsetY;  
 
-  // onSubmit() {
-  //   let entity : iMapEntity = new ;  
-  //   entity.name = this.formGroup.get('name')?.value;
-  // }
+      this.moveIcon(clickEvent.offsetX, clickEvent.offsetY);
+    })   
+  }
+
+  private moveIcon(newX: number, newY: number) {
+
+  }
 }

@@ -6,21 +6,23 @@ import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatInputModule} from '@angular/material/input';
+import { MatGridListModule} from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 const MatrterialComponents = [
   MatTabsModule,
   MatListModule,
   MatIconModule,
-  MatSidenavModule,
+  MatSidenavModule, 
   MatButtonModule,
   MatDialogModule,
   MatToolbarModule,
   MatInputModule,
   MatGridListModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatCardModule
 ];
 
 @NgModule({

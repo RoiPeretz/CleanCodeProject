@@ -7,6 +7,7 @@ import { MapsManagerComponent } from './components/maps-manager/maps-manager.com
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MapUploaderDialogComponent } from './components/map-uploader/map-uploader-dialog.component';
 import { MaterialModule } from './modules/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MaterialModule } from './modules/material/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
