@@ -1,5 +1,6 @@
 using MapEntitiesService.Infrastructure.IocContainer;
 using MessageBroker.Infrastructure;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,15 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddMapEntitiesInfrastructureLibrary();
 builder.Services.AddMessageBrokerInfrastructureLibrary();
+
+#region Serilog
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+#endregion
 
 var app = builder.Build();
 

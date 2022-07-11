@@ -80,13 +80,18 @@ export class EntitiesManagerComponent implements OnInit, AfterViewInit {
 
       this.moveIcon(values.x, values.y);
     })
+
+    this.mapEntityForm.controls.x.registerOnChange(()=> {
+      // this.moveIcon(this.mapEntityForm.controls.x.v, values.y);
+    })
   }
 
   public onClick(e: MouseEvent ) {
     this.mapEntityForm.controls.x.setValue(e.offsetX) ;
     this.mapEntityForm.controls.y.setValue(e.offsetY);
   
-    this.entityImageElement.nativeElement.style.transform = `translate(${e.offsetX - 50}px, ${e.offsetY}px)`
+    // this.entityImageElement.nativeElement.style.transform = `translate(${e.offsetX - 50}px, ${e.offsetY}px)`
+    this.moveIcon(e.offsetX - 50, e.offsetY);
   }
 
   private subscribeToCanvasClicks()
@@ -100,6 +105,6 @@ export class EntitiesManagerComponent implements OnInit, AfterViewInit {
   }
 
   private moveIcon(newX: number, newY: number) {
-
+    this.entityImageElement.nativeElement.style.transform = `translate(${newX}px, ${newY}px)`
   }
 }

@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapEntitiesService", "MapEntitiesService\MapEntitiesService.csproj", "{87ADDD2A-2432-462A-B407-4A2EB2BA24ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapEntitiesService", "MapEntitiesService\MapEntitiesService.csproj", "{87ADDD2A-2432-462A-B407-4A2EB2BA24ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapEntities", "MapEntities", "{295340E1-B61F-457F-B90A-1798D7C0E5C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapEntitiesService.Core", "MapEntitiesService.Core\MapEntitiesService.Core.csproj", "{C76781D9-90BD-40CB-B449-FBDE0E3A1CC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapEntitiesService.Core", "MapEntitiesService.Core\MapEntitiesService.Core.csproj", "{C76781D9-90BD-40CB-B449-FBDE0E3A1CC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapEntitiesService.Infrastructure", "MapEntitiesService.Infrastructure\MapEntitiesService.Infrastructure.csproj", "{A4433970-A717-42B5-A6CF-32F68CD4B42B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapEntitiesService.Infrastructure", "MapEntitiesService.Infrastructure\MapEntitiesService.Infrastructure.csproj", "{A4433970-A717-42B5-A6CF-32F68CD4B42B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{638468DF-05EC-4EEE-B7E4-1C11267A671F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBroker.Core", "MessageBroker.Core\MessageBroker.Core.csproj", "{7F2E6CE6-997A-414A-A8D4-33CE777603D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBroker.Core", "MessageBroker.Core\MessageBroker.Core.csproj", "{7F2E6CE6-997A-414A-A8D4-33CE777603D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBroker.Infrastructure", "MessageBroker.Infrastructure\MessageBroker.Infrastructure.csproj", "{08BDBBB7-3E04-4BB3-92CD-516E711630C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBroker.Infrastructure", "MessageBroker.Infrastructure\MessageBroker.Infrastructure.csproj", "{08BDBBB7-3E04-4BB3-92CD-516E711630C7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3D5ABEC2-6A6E-485F-8D88-FFD899800BE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{08BDBBB7-3E04-4BB3-92CD-516E711630C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08BDBBB7-3E04-4BB3-92CD-516E711630C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08BDBBB7-3E04-4BB3-92CD-516E711630C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D5ABEC2-6A6E-485F-8D88-FFD899800BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D5ABEC2-6A6E-485F-8D88-FFD899800BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D5ABEC2-6A6E-485F-8D88-FFD899800BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D5ABEC2-6A6E-485F-8D88-FFD899800BE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
