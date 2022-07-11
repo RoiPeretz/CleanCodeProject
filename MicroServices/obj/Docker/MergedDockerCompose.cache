@@ -1,0 +1,46 @@
+networks:
+  main:
+    name: mapeenetwork
+services:
+  mapentitiesservice:
+    build:
+      context: C:\Git\MapeeCleanCodeProject\MicroServices
+      dockerfile: MapEntitiesService/Dockerfile
+    depends_on:
+      messageBrokerService:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: mapentitiesservice
+    networks:
+      main: {}
+    ports:
+    - published: 50001
+      target: 80
+    - target: 80
+    restart: unless-stopped
+  messageBrokerService:
+    container_name: RabbitMqMessageBroker
+    image: rabbitmq:3-management
+    networks:
+      main: {}
+    ports:
+    - published: 5672
+      target: 5672
+    - published: 15672
+      target: 15672
+  seqLoggerService:
+    container_name: SeqLogger
+    environment:
+      ACCEPT_EULA: "Y"
+    image: datalust/seq:latest
+    networks:
+      main: {}
+    ports:
+    - published: 50002
+      target: 80
+    - published: 5341
+      target: 5341
+    volumes:
+    - c:\Docker\Data\Seq:/data:rw
+version: '3.4'

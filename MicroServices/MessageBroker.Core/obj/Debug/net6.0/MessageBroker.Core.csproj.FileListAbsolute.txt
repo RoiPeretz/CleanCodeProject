@@ -1,0 +1,12 @@
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\bin\Debug\net6.0\MessageBroker.Core.deps.json
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\bin\Debug\net6.0\MessageBroker.Core.dll
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\bin\Debug\net6.0\MessageBroker.Core.pdb
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\MessageBroker.Core.csproj.AssemblyReference.cache
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\MessageBroker.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\MessageBroker.Core.AssemblyInfoInputs.cache
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\MessageBroker.Core.AssemblyInfo.cs
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\MessageBroker.Core.csproj.CoreCompileInputs.cache
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\MessageBroker.Core.dll
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\refint\MessageBroker.Core.dll
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\MessageBroker.Core.pdb
+C:\Git\MapeeCleanCodeProject\MicroServices\MessageBroker.Core\obj\Debug\net6.0\ref\MessageBroker.Core.dll
