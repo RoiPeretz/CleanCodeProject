@@ -1,5 +1,5 @@
 export interface IMapEntity {
-    name: string
-    x : number
-    y: number
+    Title: string
+    XPosition: number
+    YPosition: number
 }

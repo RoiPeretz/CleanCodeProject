@@ -8,6 +8,7 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { MapUploaderDialogComponent } from './components/map-uploader/map-uploader-dialog.component';
 import { MaterialModule } from './modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
