@@ -11,8 +11,8 @@ import { IMapEntity } from 'src/app/models/mapEntityModels/iMap-entity.model';
 import { MapEntity } from 'src/app/models/mapEntityModels/map-entity.model';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MapDummyData } from 'src/app/services/maps/mapDummyData';
-import { IMapModel } from 'src/app/Models/mapModel/iMapModel';
-import { MapModel } from 'src/app/Models/mapModel/mapModel';
+import { IMapModel } from 'src/app/models/mapModel/iMapModel';
+import { MapModel } from 'src/app/models/mapModel/mapModel';
 @Component({
   selector: 'app-entities-manager',
   templateUrl: './entities-manager.component.html',
@@ -64,7 +64,7 @@ export class EntitiesManagerComponent implements OnInit, AfterViewInit {
     this.entityImageElement.nativeElement =
       document.getElementById('mapEntity');
     // this._canvas = this._canvasRef.nativeElement;
-    // this.subscribeToFormChanges();
+    this.subscribeToFormChanges();
     // this.subscribeToCanvasClicks();
 
     // let context = this._canvas.getContext("2d");
@@ -81,7 +81,7 @@ export class EntitiesManagerComponent implements OnInit, AfterViewInit {
     let x = this.mapEntityForm.value.x as number;
     let y = this.mapEntityForm.value.y as number;
     let entity = new MapEntity(name, x, y);
-    this.mapEntitiesService.addMapEntity(entity);
+    this.mapEntitiesService.addMapEntity(entity).subscribe();
     this.mapEntityForm.reset();
   }
 
@@ -92,9 +92,9 @@ export class EntitiesManagerComponent implements OnInit, AfterViewInit {
       this.moveIcon(values.x, values.y);
     });
 
-    this.mapEntityForm.controls.x.registerOnChange(() => {
-      // this.moveIcon(this.mapEntityForm.controls.x.v, values.y);
-    });
+    // this.mapEntityForm.controls.x.registerOnChange(()=> {
+    //   // this.moveIcon(this.mapEntityForm.controls.x.v, values.y);
+    // })
   }
 
   public onClick(e: MouseEvent) {
