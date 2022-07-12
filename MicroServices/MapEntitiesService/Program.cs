@@ -14,7 +14,21 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMapEntitiesInfrastructureLibrary();
 builder.Services.AddMessageBrokerInfrastructureLibrary();
 
-#region Serilog
+#region CORS
+//Move to API Gatway
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "corsPolicy", builder =>
+    {
+        builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+#endregion
+
+#region Logger
 var logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()
@@ -32,8 +46,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
+app.UseCors("corsPolicy");
 
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
