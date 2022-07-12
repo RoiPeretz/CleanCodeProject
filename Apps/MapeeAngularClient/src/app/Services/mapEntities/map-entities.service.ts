@@ -20,12 +20,12 @@ export class MapEntitiesService {
     }),
   };
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   addMapEntity(entity: IMapEntity): Observable<any> {
     console.log('added entity ', entity.title);
     return this.httpClient
-      .post<any>(this.entitiesUrl, entity, this.httpOptions)
+      .post<any>(this.entitiesUrl, entity)
       .pipe(catchError(this.handleError));
   }
 

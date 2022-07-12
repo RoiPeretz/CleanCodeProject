@@ -16,7 +16,7 @@ public class MapEntitiesController : ControllerBase
     }
        
     [HttpPost]
-    public bool Post([FromForm] MapEntity mapEntity)
+    public bool Post([FromBody] MapEntity mapEntity)
     {
         return _mapEntitiesControllerService.AddMapEntity(mapEntity);
     }
