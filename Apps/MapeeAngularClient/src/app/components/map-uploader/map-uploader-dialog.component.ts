@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { IMapModel } from 'src/app/models/mapModel/iMapModel';
+import { IMapModel } from 'src/app/Models/mapModel/iMapModel';
 import { MapsService } from 'src/app/services/maps/maps.service';
 
 @Component({

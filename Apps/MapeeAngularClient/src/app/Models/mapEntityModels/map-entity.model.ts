@@ -1,5 +1,9 @@
-import { IMapEntity } from "./iMap-entity.model"
+import { IMapEntity } from './iMap-entity.model';
 
 export class MapEntity implements IMapEntity {
-    constructor(public Title: string, public XPosition: number, public YPosition: number) { }
+  constructor(
+    public title: string,
+    public xPosition: number,
+    public yPosition: number
+  ) {}
 }

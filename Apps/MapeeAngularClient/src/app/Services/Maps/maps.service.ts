@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
-import { IMapModel } from 'src/app/models/mapModel/iMapModel';
+import { IMapModel } from 'src/app/Models/mapModel/iMapModel';
 import { MapDummyData } from './mapDummyData';
 
 @Injectable({
