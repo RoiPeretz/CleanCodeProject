@@ -1,4 +1,4 @@
-import { MapModel } from 'src/app/Models/mapModel/mapModel';
+import { MapModel } from 'src/app/models/mapModel/mapModel';
 
 export var MapDummyData: MapModel[] = [
   new MapModel(

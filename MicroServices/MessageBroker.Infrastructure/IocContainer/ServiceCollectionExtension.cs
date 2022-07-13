@@ -2,7 +2,7 @@
 using MessageBroker.Infrastructure.RabbitMq;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MessageBroker.Infrastructure;
+namespace MessageBroker.Infrastructure.IocContainer;
 
 public static class ServiceCollectionExtension
 {

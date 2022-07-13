@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSelectionListChange } from '@angular/material/list';
 import { Observable, map, shareReplay, first, Subscription } from 'rxjs';
-import { IMapModel } from 'src/app/Models/mapModel/iMapModel';
+import { IMapModel } from 'src/app/models/mapModel/iMapModel';
 import { MapsService } from 'src/app/services/maps/maps.service';
 import { MissionMapService } from 'src/app/services/missionMap/mission-map.service';
 import { MapUploaderDialogComponent } from '../map-uploader/map-uploader-dialog.component';

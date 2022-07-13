@@ -1,5 +1,6 @@
 using MapEntitiesService.Infrastructure.IocContainer;
 using MessageBroker.Infrastructure;
+using MessageBroker.Infrastructure.IocContainer;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
