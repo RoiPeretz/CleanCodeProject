@@ -1,7 +1,6 @@
 import {
   HttpClient,
   HttpErrorResponse,
-  HttpHeaders,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -13,12 +12,6 @@ import { IMapEntity } from 'src/app/models/mapEntityModels/iMap-entity.model';
 })
 export class MapEntitiesService {
   private entitiesUrl: string = 'http://localhost:50001/MapEntities';
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'multipart/form-data; charset=utf-8',
-      Accept: 'text/plain',
-    }),
-  };
 
   constructor(private httpClient: HttpClient) { }
 
