@@ -14,7 +14,7 @@ public class MapEntitiesController : ControllerBase
     {
         _mapEntitiesControllerService = mapEntitiesControllerService;
     }
-       
+
     [HttpPost]
     public bool Post([FromBody] MapEntity mapEntity)
     {
