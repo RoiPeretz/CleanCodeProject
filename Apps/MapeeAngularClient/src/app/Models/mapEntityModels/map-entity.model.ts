@@ -5,5 +5,5 @@ export class MapEntity implements IMapEntity {
     public title: string,
     public xPosition: number,
     public yPosition: number
-  ) {}
+  ) { }
 }

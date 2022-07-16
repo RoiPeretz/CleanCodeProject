@@ -1,10 +1,10 @@
-<div id="topFrame" style="display: flex; flex-direction: row" > 
-    <form [formGroup]="mapEntityForm" (ngSubmit)="onSubmit()">
-        <mat-card>
+<div class="container">
+    <div class="fixed">
+        <form [formGroup]="mapEntityForm" (ngSubmit)="onSubmit()" id="form">
             <mat-form-field appearance="fill">
                 <mat-label>Entity Name</mat-label>
                 <input matInput formControlName="name" type="text">
-            </mat-form-field> 
+            </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>X</mat-label>
                 <input matInput formControlName="x">
@@ -14,13 +14,40 @@
                 <input matInput formControlName="y">
             </mat-form-field>
             <div>
-                <button mat-raised-button color="primary" type="submit">Submit</button>    
+                <button mat-raised-button color="primary" type="submit">Submit</button>
             </div>
-        </mat-card>
-    </form>    
-    <!-- <canvas #canvas> </canvas>         -->
-    <div id="container">
-        <img id ="mapEntity" [src]="entityImageSrc">
+        </form>
+    </div>
+    <div class="missionMapContainer">
+        <img id="mapEntity" [src]="entityImageSrc">
+        <img class="mapImg" [src]="map.content" (click)="onClick($event)">
+    </div>
+</div>
+<!-- <div id="topFrame">
+    <div id="mapEntityForm">
+        <form [formGroup]="mapEntityForm" (ngSubmit)="onSubmit()" id="form">
+            <mat-card id="card">
+                <mat-form-field appearance="fill">
+                    <mat-label>Entity Name</mat-label>
+                    <input matInput formControlName="name" type="text">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>X</mat-label>
+                    <input matInput formControlName="x">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Y</mat-label>
+                    <input matInput formControlName="y">
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary" type="submit">Submit</button>
+                </div>
+            </mat-card>
+        </form>
+    </div>
+
+    <div id="missionMapContainer">
+        <img id="mapEntity" [src]="entityImageSrc">
         <img id="mapImg" [src]="map.content" (click)="onClick($event)">
     </div>
-</div>    
+</div> -->
