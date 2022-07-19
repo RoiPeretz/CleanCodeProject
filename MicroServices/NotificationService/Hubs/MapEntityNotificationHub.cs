@@ -2,4 +2,10 @@
 
 namespace NotificationService.Hubs;
 
-public class MapEntityNotificationHub : Hub { }
+public class MapEntityNotificationHub : Hub
+{
+    public override Task OnConnectedAsync()
+    {
+        return base.OnConnectedAsync();
+    }
+}

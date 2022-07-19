@@ -23,6 +23,6 @@ internal class NewMapEntityCommandHandler : INewMapEntityCommandHandler
     public void OnNewMapEntity(string message)
     {
         _logger.LogInformation("Received new entity - {entity} from message broker", message);
-        _hubContext.Clients.All.SendAsync(_settings.GetNewMapEntityClientMethod, message);
+        _hubContext.Clients.All.SendAsync(_settings.GetNewMapEntityClientMethod, "", message);
     }
 }

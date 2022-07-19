@@ -22,6 +22,7 @@ builder.Host.UseSerilog((hostBuilderContext, loggerConfiguration) =>
 #endregion
 builder.Services.AddMessageBrokerInfrastructureLibrary(new MessageBrokerSettings
 {
+
     HostName = settings.HostName
 });
 
