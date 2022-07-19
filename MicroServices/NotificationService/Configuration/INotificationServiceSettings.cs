@@ -4,4 +4,5 @@ public interface INotificationServiceSettings
 {
     string HostName { get; set; }
     string MapEntityTopic { get; set; }
+    string GetNewMapEntityClientMethod { get; set; }
 }

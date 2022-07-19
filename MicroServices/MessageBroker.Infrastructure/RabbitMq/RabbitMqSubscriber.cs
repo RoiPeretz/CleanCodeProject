@@ -10,7 +10,7 @@ namespace MessageBroker.Infrastructure.RabbitMq;
 internal class RabbitMqSubscriber : IDisposable, ISubscriber
 {
     private readonly IModel _channel;
-    private readonly ILogger _logger;
+    private readonly ILogger<RabbitMqSubscriber> _logger;
 
     public RabbitMqSubscriber(IRabbitMqCreateConnectionWorkFlow rabbitMqCreateConnectionWorkFlow,
         ILogger<RabbitMqSubscriber> logger)
