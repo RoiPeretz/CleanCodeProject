@@ -37,6 +37,16 @@ services:
         networks:
             - main   
 
+    notificationservice:
+        image: ${DOCKER_REGISTRY-}notificationservice
+        build:
+          context: .
+          dockerfile: NotificationService/Dockerfile
+        networks:
+           - main
+        ports:
+           - 50003:80
+
 networks:
   main:
     name: mapeenetwork

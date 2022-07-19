@@ -29,14 +29,10 @@ builder.Services.AddCors(options =>
 #endregion
 
 #region Logger
-
-var logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.FromLogContext()
-    .CreateLogger();
-builder.Logging.ClearProviders();
-builder.Logging.AddSerilog(logger);
-
+builder.Host.UseSerilog((hostBuilderContext, loggerConfiguration) =>
+{
+    loggerConfiguration.ReadFrom.Configuration(hostBuilderContext.Configuration);
+});
 #endregion
 
 var app = builder.Build();
