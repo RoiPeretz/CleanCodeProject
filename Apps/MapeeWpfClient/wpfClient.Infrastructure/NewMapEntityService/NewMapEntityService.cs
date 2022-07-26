@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Logging;
 using wpfClient.Core.Configuration;
+using wpfClient.Core.Logging;
 using wpfClient.Core.Models;
 using wpfClient.Core.Parsers;
 using wpfClient.Core.Services;
@@ -19,8 +20,11 @@ internal class NewMapEntityService : INewMapEntityService, IDisposable
         _connection = new HubConnectionBuilder()
             .WithUrl(settings.NewMapEntityUrl)
             .WithAutomaticReconnect()
+             .ConfigureLogging(logging =>
+             {
+                 logging.AddProvider(_logger.AsLoggerProvider());
+             })
             .Build();
-
 
         _connection.On<string, string>(settings.NewMapEntityMethod, (user, message) =>
         {

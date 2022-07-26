@@ -16,7 +16,15 @@ internal class EntityViewModel: IDisposable, IEntityViewModel
         MapEntities = new ObservableCollection<MapEntity>();
 
         _newMapEntityService.NewMapEntity += OnNewMapEntity;
-        _newMapEntityService.StartAsync();
+        try
+        {
+            _newMapEntityService.StartAsync();
+        }
+        catch (Exception ex)
+        {
+
+        }
+
     }
 
     private void OnNewMapEntity(object? sender, MapEntity e)

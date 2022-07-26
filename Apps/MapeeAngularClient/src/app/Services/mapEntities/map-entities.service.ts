@@ -11,7 +11,8 @@ import { IMapEntity } from 'src/app/models/mapEntityModels/iMap-entity.model';
   providedIn: 'root',
 })
 export class MapEntitiesService {
-  private entitiesUrl: string = 'http://localhost:50001/MapEntities';
+  // private entitiesUrl: string = 'http://localhost:50001/MapEntities';
+  private entitiesUrl: string = 'http://localhost:5000/MapEntities';
 
   constructor(private httpClient: HttpClient) { }
 

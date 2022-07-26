@@ -1,0 +1,41 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  },
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/MapEntities",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mapentitiesservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/MapEntities",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/ws",
+      "DownstreamScheme": "ws",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "notificationservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/ws"
+    },
+    {
+      "DownstreamPathTemplate": "/ws/{catchAll}",
+      "DownstreamScheme": "ws",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "notificationservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/ws/{catchAll}"
+    }
+  ]
+}
