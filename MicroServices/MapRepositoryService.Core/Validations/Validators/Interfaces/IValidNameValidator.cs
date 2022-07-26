@@ -1,6 +1,6 @@
 ﻿namespace MapRepositoryService.Core.Validations.Validators.Interfaces;
 
-public interface IUniqueNameValidation
+internal interface IValidNameValidator
 {
-    bool Validate(string name);
+    public bool Validate(string name);
 }

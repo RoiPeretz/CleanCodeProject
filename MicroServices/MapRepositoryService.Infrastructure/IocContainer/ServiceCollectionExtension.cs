@@ -24,6 +24,8 @@ public static class ServiceCollectionExtension
         services.AddScoped<IFileExtensionValidator, FileExtensionValidator>();
         services.AddScoped<IFileSizeValidator, FileSizeValidator>();
         services.AddScoped<IUniqueNameValidation, UniqueNameValidation>();
+        services.AddScoped<IMapExistsQuery, MapExistsQuery>();
+
 
         //Commands
         services.AddScoped<IAddMapCommand, AddMapCommand>();

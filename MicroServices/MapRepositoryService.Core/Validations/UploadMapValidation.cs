@@ -11,19 +11,19 @@ public class UploadMapValidation : IUploadMapValidation
     private readonly IFileSizeValidator _fileSizeValidator;
     private readonly IFileExtensionValidator _fileExtensionValidator;
     private readonly IUniqueNameValidation _uniqueNameValidation;
-    private readonly IGetMapsQuery _getMapsQuery;
+    private readonly IValidNameValidator _nameValidator;
     private readonly ILogger<UploadMapValidation> _logger;
 
     public UploadMapValidation(IFileSizeValidator fileSizeValidator,
         IFileExtensionValidator fileExtensionValidator,
         IUniqueNameValidation uniqueNameValidation,
-        IGetMapsQuery getMapsQuery,
+        IValidNameValidator nameValidator,
         ILogger<UploadMapValidation> logger)
     {
         _fileSizeValidator = fileSizeValidator;
         _fileExtensionValidator = fileExtensionValidator;
         _uniqueNameValidation = uniqueNameValidation;
-        _getMapsQuery = getMapsQuery;
+        _nameValidator = nameValidator;
         _logger = logger;
     }
 
@@ -45,9 +45,16 @@ public class UploadMapValidation : IUploadMapValidation
             return new ResultModel(false, message);
         }
 
-        var existingNames = _getMapsQuery.GetMaps().Result.ToList();
-        var validName = _uniqueNameValidation.Validate(model.Name, existingNames);
+        var validName = _nameValidator.Validate(model.Name);
         if (!validName)
+        {
+            var message = "Validation failed - file name is not valid";
+            _logger.LogInformation($"Did not add {model.Name}" + message);
+            return new ResultModel(false, message);
+        }
+        
+        var uniqueName = _uniqueNameValidation.Validate(model.Name);
+        if (!uniqueName)
         {
             var message = "Validation failed - file name is not unique";
             _logger.LogInformation($"Did not add {model.Name}" + message);
