@@ -12,7 +12,7 @@
         <ListView ItemsSource="{Binding MapEntities}">
             <ListView.View>
 
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Employee Information">
+                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Entities">
 
                     <GridViewColumn DisplayMemberBinding="{Binding Path=(models:MapEntity.Title)}" Header="Title" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=(models:MapEntity.XPosition)}" Header="XPosition" Width="100"/>
