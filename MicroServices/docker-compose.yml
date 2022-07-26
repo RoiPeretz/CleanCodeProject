@@ -37,6 +37,19 @@ services:
         networks:
             - main   
 
+    maprepositoryservice:
+        image: ${DOCKER_REGISTRY-}maprepositoryservice
+        build:
+          context: .
+          dockerfile: MapRepositoryService/Dockerfile
+        ports:
+            - 50003:80
+        depends_on:
+            - messageBrokerService
+        networks:
+            - main
+        restart: unless-stopped
+
     notificationservice:
         image: ${DOCKER_REGISTRY-}notificationservice
         build:

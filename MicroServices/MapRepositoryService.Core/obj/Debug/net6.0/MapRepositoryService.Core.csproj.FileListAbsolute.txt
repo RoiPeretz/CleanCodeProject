@@ -1,0 +1,15 @@
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\bin\Debug\net6.0\MapRepositoryService.Core.deps.json
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\bin\Debug\net6.0\MapRepositoryService.Core.dll
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\bin\Debug\net6.0\MapRepositoryService.Core.pdb
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\bin\Debug\net6.0\MessageBroker.Core.dll
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\bin\Debug\net6.0\MessageBroker.Core.pdb
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\MapRepositoryService.Core.csproj.AssemblyReference.cache
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\MapRepositoryService.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\MapRepositoryService.Core.AssemblyInfoInputs.cache
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\MapRepositoryService.Core.AssemblyInfo.cs
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\MapRepositoryService.Core.csproj.CoreCompileInputs.cache
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\MapRepositoryService.Core.csproj.CopyComplete
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\MapRepositoryService.Core.dll
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\refint\MapRepositoryService.Core.dll
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\MapRepositoryService.Core.pdb
+C:\Users\skrik\Documents\GitHub\AeronauticsTraining\MapeeCleanCodeProject\MicroServices\MapRepositoryService.Core\obj\Debug\net6.0\ref\MapRepositoryService.Core.dll
