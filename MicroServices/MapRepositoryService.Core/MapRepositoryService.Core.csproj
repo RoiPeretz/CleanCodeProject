@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MessageBroker.Core\MessageBroker.Core.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Validations\Interfaces\" />
-    <Folder Include="Validations\Validators\Interfaces\" />
+    <ProjectReference Include="..\MessageBroker.Core\MessageBroker.Core.csproj" />
   </ItemGroup>
 
 </Project>

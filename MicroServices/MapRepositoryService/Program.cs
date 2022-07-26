@@ -4,7 +4,7 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var settings = builder.Configuration.GetSection(("MessageBrokerSettings")).Get<MapsSettings>();
+var settings = builder.Configuration.GetSection(("MessageBrokerSettings")).Get<ValidationSettings>();
 builder.Services.AddMapsInfrastructureLibrary(settings);
 
 builder.Services.AddControllers();
