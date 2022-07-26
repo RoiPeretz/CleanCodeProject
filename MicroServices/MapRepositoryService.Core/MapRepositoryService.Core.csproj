@@ -10,4 +10,9 @@
     <ProjectReference Include="..\MessageBroker.Core\MessageBroker.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validations\Interfaces\" />
+    <Folder Include="Validations\Validators\Interfaces\" />
+  </ItemGroup>
+
 </Project>

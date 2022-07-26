@@ -1,29 +1,45 @@
-﻿using MapRepositoryService.Core.Configuration;
+﻿using MapRepositoryService.Core.Data.Maps.Commands;
+using MapRepositoryService.Core.Data.Maps.Queries;
 using MapRepositoryService.Core.Models;
 using MapRepositoryService.Core.Services.Interfaces;
-using MessageBroker.Core.Interfaces;
 
-namespace MapRepositoryService.Core.Services
+namespace MapRepositoryService.Core.Services;
+
+public class MapsService : IMapsService
 {
-    public class MapsService : IMapsService
+    private readonly IAddMapCommand _addMapCommand;
+    private readonly IDeleteMapCommand _deleteMapCommand;
+    private readonly IGetMapsQuery _getMapsQuery;
+    private readonly IGetMapQuery _getMapQuery;
+
+    public MapsService(IAddMapCommand addMapCommand,
+        IDeleteMapCommand deleteMapCommand,
+        IGetMapsQuery getMapsQuery,
+        IGetMapQuery getMapQuery)
     {
-        //private readonly IPublisher _publisher;
-        //private readonly IMapsSettings _settings;
+        _addMapCommand = addMapCommand;
+        _deleteMapCommand = deleteMapCommand;
+        _getMapsQuery = getMapsQuery;
+        _getMapQuery = getMapQuery;
+    }
 
-        public MapsService(IMapsSettings settings)
-        {
-            //_publisher = publisher;
-            //_settings = settings;
-        }
+    public ResultModel AddMap(MapModel map)
+    {
+        return _addMapCommand.AddMap(map);
+    }
 
-        public bool AddMap(MapModel map)
-        {
+    public ResultModel<string> GetMap(string mapName)
+    {
+        return _getMapQuery.GetMap(mapName);
+    }
 
-            //var message = $"{map.name} {map.content}";
-            //_publisher.Publish(_settings.MapTopic, message);
+    public ResultModel<IEnumerable<string>> GetMaps()
+    {
+        return _getMapsQuery.GetMaps();
+    }
 
-            //Todo Change to result model
-            return true;
-        }
+    public ResultModel DeleteMap(string name)
+    {
+        return _deleteMapCommand.DeleteMap(name);
     }
 }
