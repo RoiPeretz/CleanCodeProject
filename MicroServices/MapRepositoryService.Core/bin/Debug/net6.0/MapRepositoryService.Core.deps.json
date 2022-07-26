@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MapRepositoryService.Core/1.0.0": {
+        "dependencies": {
+          "MessageBroker.Core": "1.0.0"
+        },
+        "runtime": {
+          "MapRepositoryService.Core.dll": {}
+        }
+      },
+      "MessageBroker.Core/1.0.0": {
+        "runtime": {
+          "MessageBroker.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MapRepositoryService.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MessageBroker.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
