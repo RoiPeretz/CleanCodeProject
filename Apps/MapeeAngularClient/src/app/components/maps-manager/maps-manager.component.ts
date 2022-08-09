@@ -64,7 +64,7 @@ export class MapsManagerComponent implements OnInit, OnDestroy {
 
   openDialog() {
     this._dialogRef.open(MapUploaderDialogComponent, {
-      width: '400px',
+      width: '405px',
     });
   }
 
@@ -90,8 +90,11 @@ export class MapsManagerComponent implements OnInit, OnDestroy {
   }
 
   private subscribeForMissionMapChange(_missionMapService: MissionMapService) {
+    const missionMapObservable = _missionMapService.missionMapChanged;
+    if(!missionMapObservable) return;
+    
     this.subscriptions.push(
-      _missionMapService.missionMapChanged.subscribe(
+      missionMapObservable.subscribe(
         this.onMissionmapChanged.bind(this)
       )
     );

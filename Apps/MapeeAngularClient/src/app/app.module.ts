@@ -7,8 +7,9 @@ import { MapsManagerComponent } from './components/maps-manager/maps-manager.com
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MapUploaderDialogComponent } from './components/map-uploader/map-uploader-dialog.component';
 import { MaterialModule } from './modules/material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormErrorsComponent } from './components/map-uploader/form-errors.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     MapsManagerComponent,
     EntitiesManagerComponent,
     MapUploaderDialogComponent,
+    FormErrorsComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -32,17 +32,19 @@ export class EntitiesManagerComponent implements OnInit, AfterViewInit {
 
   constructor(private formBuilder: FormBuilder, private mapEntitiesService: MapEntitiesService,
     private missionMapService: MissionMapService) {
-    this.map = new MapModel("empty", "");
+    this.map = new MapModel("empty", undefined);
     this.entityImageSrc = "../../../assets/location.png"
     this.entityImageElement = new ElementRef(document.getElementById("entityImage"));
   }
 
   ngOnInit(): void {
-    let missionMapObserver = this.missionMapService.missionMapChanged;
-    missionMapObserver.subscribe((mapName) => {
+    let missionMapObservable = this.missionMapService.missionMapChanged;
+    if(!missionMapObservable) return;
+
+    missionMapObservable.subscribe((mapName) => {
       let currentMap = MapDummyData.find((map) => map.name == mapName);
       if (currentMap == undefined) {
-        this.map = new MapModel("empty", "");
+        this.map = new MapModel("empty", undefined);
       } else {
         this.map = currentMap;
       }

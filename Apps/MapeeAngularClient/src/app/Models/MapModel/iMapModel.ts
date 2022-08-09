@@ -1,4 +1,4 @@
 export interface IMapModel {
   name: string;
-  content: string;
+  content: File | undefined;
 }
